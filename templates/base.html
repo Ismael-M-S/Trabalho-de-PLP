@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+	<title>CalculeFormulas.com</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> 
+    <script src="{{url_for('static', filename='operacoes.js')}}" async></script>
+	<style type="text/css">
+		body,h1,h2{font-family: "Arial", sans-serif}
+		body, html {height: 100%;}
+		p {line-height: 2}
+		.bgimg, .bgimg2 {
+		  min-height: 100%;
+		  background-position: center;
+		  background-size: cover;
+		}
+		.hide {
+		  display: none;
+		}
+		.bgimg {background-image: url("static/img/math.jpg")}
+		.selectt { 
+            color: white;
+            display: none;
+        } 
+        .selectted { 
+            color: white;
+            display: none;
+        } 
+	</style>
+	<body>
+		<!-- Inicio-->
+		<header class="w3-display-container w3-wide bgimg w3-grayscale-min" id="inicio">
+		  <div class="w3-display-middle w3-text-white w3-center">
+			<h1 class="w3-jumbo" style="background-color: white; color: black;">CalculeFormulas.com</h1>
+			<h2 style="background-color: white; color: black;">O C&aacute;lculo mais r&aacute;pido!</h2>
+		  </div>
+		</header>
+
+		<!-- Navbar -->
+		<div class="w3-bottom w3-hide-small">
+		  <div class="w3-bar w3-white w3-center w3-padding w3-opacity-min w3-hover-opacity-off">
+			<a href="#inicio" style="width:25%" class="w3-bar-item w3-button">In&iacute;cio</a>
+			<a href="#descricao" style="width:25%" class="w3-bar-item w3-button">Descri&ccedil;&atilde;o</a>
+			<a href="#formulas" style="width:25%" class="w3-bar-item w3-button">Form&uacute;las</a>
+			<a href="#rodape" style="width:25%" class="w3-bar-item w3-button w3-hover-black">Rodap&eacute;</a>
+		  </div>
+		</div>
+
+		<!-- Descricao do site -->
+		<div class="w3-container w3-padding-64" id="descricao" style="background-color: black;">
+		  <div class="w3-content">
+			<h1 class="w3-center w3-text-white"><b>Sobre o CalculaFormulas.com</b></h1>
+			<img class="w3-round w3-grayscale-min" src="static/img/formulas2.jpg" style="width:100%;margin:25px 0">
+			<p><b><i style="color: white;">Um site pr&oacute;prio para aqueles usu&aacute;rios que buscam respostas r&aacute;pidas e interativas ao se deparar com uma determinada form&uacute;la.</i></b>
+			</p><br>
+		  </div>
+		</div>
+		<!-- Background photo 
+		<div class="w3-display-container bgimg2">
+		  <div class="w3-display-middle w3-text-white w3-center">
+			<h1 class="w3-jumbo">You Are Invited</h1><br>
+			<h2>Of course..</h2>
+		  </div>
+		</div>
+		-->
+		<!-- Wedding information -->
+		<div class="w3-container w3-padding-64 w3-black w3-grayscale-min w3-center" id="formulas">
+		  <div class="w3-content">
+			<h1 class="w3-text-white "><b>As form&uacute;las</b></h1>
+			<p>Selecione alguma das form&uacute;las a seguir!</p>
+			<p><input type="radio" name="radioFormulas" value="pitagoras"> Teorema de Pitagoras</input></p>
+			<p><input type="radio" name="radioFormulas" value="gravidade"> Lei da Gravidade</input></p>
+			<p><input type="radio" name="radioFormulas" value="relatividade"> Equa&ccedil;&atilde;o da Teoria da Relatividade</input></p>
+			<p><input type="radio" name="radioFormulas" value="caos"> Teoria do caos</input></p>
+			<p><input type="radio" name="radioFormulas" value="clapeyron"> Equa&ccedil;&atilde;o de Clapeyron</input></p>
+			<p><input type="radio" name="radioFormulas" value="torricelli"> Equa&ccedil;&atilde;o de Torricelli</input></p>
+			<p><input type="radio" name="radioFormulas" value="gauss"> Equa&ccedil;&atilde;o de Gauss</input></p>
+			<p><input type="radio" name="radioFormulas" value="forca"> For&ccedil;a sobre part&iacute;cula</input></p>
+			<div class="w3-row">
+			  <!-- TEOREMA DE PITAGORAS-->
+			  <div class="equacao" id="/equacao1/">
+				<div class="w3 pitagoras selectt">
+					<h2>Teorema Pitagoras</h2>
+					<p>
+						<var>a<sup>2</sup></var> = <var>b<sup>2</sup></var> + <var>c<sup>2</sup></var>
+						<br>Escolha a vari&aacute;vel para ser encontrada
+					</p>
+					<p><input type="radio" name="radioOpcoes" value="a"> A</input></p>
+					<p><input type="radio" name="radioOpcoes" value="b"> B</input></p>
+					<p><input type="radio" name="radioOpcoes" value="c"> C</input></p>
+				</div>
+				<div class="w3-text-white a selectted">
+					<h2>Digite o valor</h2>
+					<p>B: <input class="AA" type="number" name="B"></input></p>
+					<p>C: <input class="AA" type="number" name="C"></input></p>
+					<button type="button" value="A">Calcule A agora</button>
+					<p id="/equacao1/A"></p>
+				</div>
+				<div class="w3-text-white b selectted">
+					<h2>Digite o valor</h2>
+					<p>A: <input class="BB" type="number" name="A"></input></p>
+					<p>C: <input class="BB" type="number" name="C"></input></p>
+					<button type="button" value="B">Calcule B agora</button>
+					<p id="/equacao1/B"></p>
+				</div>
+				<div class="w3-text-white c selectted">
+					<h2>Digite o valor</h2>
+					<p>A: <input class="CC" type="number" name="A"></input></p>
+					<p>B: <input class="CC" type="number" name="B"></input></p>
+					<button type="button" value="C">Calcule C agora</button>
+					<p id="/equacao1/C"></p>
+				</div>
+			  </div>
+			  
+			  <!-- LEI DA GRAVIDADE-->
+			  <div class="equacao" id="/equacao2/">
+				<div class="w3 gravidade selectt">
+					<h2>Lei da Gravidade</h2>
+					<p>
+						<var>F</var> = <var>G</var> &times; ( ( <var>m<sub>1</sub></var> &times; <var>m<sub>2</sub></var> ) &divide; <var>d<sup>2</sup></var> )
+						<br>Escolha a vari&aacute;vel para ser encontrada
+					</p>
+					<p><input type="radio" name="radioOpcoes" value="f"> F</input></p>
+					<p><input type="radio" name="radioOpcoes" value="g"> G</input></p>
+					<p><input type="radio" name="radioOpcoes" value="m1"> m<sub>1</sub></input></p>
+					<p><input type="radio" name="radioOpcoes" value="m2"> m<sub>2</sub></input></p>
+					<p><input type="radio" name="radioOpcoes" value="d2"> d</input></p>
+				</div>
+				
+				<div class="w3-text-white f selectted">
+					<h2>Digite o valor</h2>
+					<p>G: <input class="FF" type="number" name="G" value="9,58" placeholder="9,58"></input> m/s²</p>
+					<p>m<sub>1</sub>: <input class="FF" type="number" name="M1"></input> Kg</p>
+					<p>m<sub>2</sub>: <input class="FF" type="number" name="M2"></input> Kg</p>
+					<p>d: <input class="FF" type="number" name="D"></input> m</p>
+					<button type="button" value="F">Calcule F agora</button>
+					<p id="/equacao2/F"></p>
+				</div>
+				<div class="w3-text-white g selectted">
+					<h2>Digite o valor</h2>
+					<p>F: <input class="GG" type="number" name="F"></input> N</p>
+					<p>m<sub>1</sub>: <input class="GG" type="number" name="M1"></input> Kg</p>
+					<p>m<sub>2</sub>: <input class="GG" type="number" name="M2"></input> Kg</p>
+					<p>d: <input class="GG" type="number" name="D"></input> m</p>
+					<button type="button" value="G">Calcule G agora</button>
+					<p id="/equacao2/G"></p>
+				</div>
+				<div class="w3-text-white m1 selectted">
+					<h2>Digite o valor</h2>
+					<p>F: <input class="M1M1" type="number" name="F"></input> N</p>
+					<p>G: <input class="M1M1" type="number" name="G" value="9,58" placeholder="9,58"></input> m/s²</p>
+					<p>m<sub>2</sub>: <input class="M1M1" type="number" name="M2"></input> Kg</p>
+					<p>d: <input class="M1M1" type="number" name="D"></input> m</p>
+					<button type="button" value="M1">Calcule m1 agora</button>
+					<p id="/equacao2/M1"></p>
+				</div>
+				<div class="w3-text-white m2 selectted">
+					<h2>Digite o valor</h2>
+					<p>F: <input class="M2M2" type="number" name="F"></input> N</p>
+					<p>G: <input class="M2M2" type="number" name="G" value="9,58" placeholder="9,58"></input> m/s²</p>
+					<p>m<sub>1</sub>: <input class="M2M2" type="number" name="M1"></input> Kg</p>
+					<p>d: <input class="M2M2" type="number" name="D"></input> m</p>
+					<button type="button" value="M2">Calcule m2 agora</button>
+					<p id="/equacao2/M2"></p>
+				</div>
+				<div class="w3-text-white d2 selectted">
+					<h2>Digite o valor</h2>
+					<p>F: <input class="DD" type="number" name="F"></input> N</p>
+					<p>G: <input class="DD" type="number" name="G" value="9,58" placeholder="9,58"></input> m/s²</p>
+					<p>m<sub>1</sub>: <input class="DD" type="number" name="M1"></input> Kg</p>
+					<p>m<sub>2</sub>: <input class="DD" type="number" name="M2"></input> Kg</p>
+					<button type="button" value="D">Calcule d agora</button>
+					<p id="/equacao2/D"></p>
+				</div>
+			  </div>
+			  
+			  <!-- EQUAÇÃO DA TEORIA DA RELATIVIDADE-->
+			  <div class="equacao" id="/equacao3/">
+				<div class="w3 relatividade selectt">
+					<h2>Equa&ccedil;&atilde;o da Teoria da Relatividade</h2>
+					<p>
+						<var>E</var> = <var>c</var><sup>2</sup> &times; <var>m</var>
+						<br>Escolha a vari&aacute;vel para ser encontrada
+					</p>
+					<p><input type="radio" name="radioOpcoes" value="e"></input> E</p>
+					<p><input type="radio" name="radioOpcoes" value="cc"></input> c</p>
+					<p><input type="radio" name="radioOpcoes" value="m"></input> m</p>
+				</div>
+				<div class="w3-text-white e selectted">
+					<h2>Digite o valor</h2>
+					<p>c: <input class="EE" type="text" name="C" value="300 000 000" readonly></input> m/s</p>
+					<p>m: <input class="EE" type="number" name="M"></input> Kg</p>
+					<button type="button" value="E">Calcule E agora</button>
+					<p id="/equacao3/E"></p>
+				</div>
+				<div class="w3-text-white m selectted">
+					<h2>Digite o valor</h2>
+					<p>E: <input class="MM" type="number" name="E"></input> J</p>
+					<p>C: <input class="MM" type="text" name="C" value="300 000 000" readonly></input> m/s</p>
+					<button type="button" value="M">Calcule M agora</button>
+					<p id="/equacao3/M"></p>
+				</div>
+				<div class="w3-text-white cc selectted">
+					<h2>Digite o valor</h2>
+					<p hidden>E: <input class="CC" type="number" name="E" disabled></input> J</p>
+					<p hidden>m: <input class="CC" type="number" name="M" disabled></input> Kg</p>
+					<button type="button" value="C">Calcule C agora</button>
+					<p id="/equacao3/C"></p>
+				</div>
+			  </div>
+
+			  <!-- TEORIA DO CAOS-->
+			  <div class="equacao" id="/equacao4/">
+				<div class="w3 caos selectt">
+					<h2>Teoria do Caos</h2>
+					<p>
+						<var>x</var><sub><i>new</i></sub> = <var>k</var> &times; <var>x<sub><i>old</i></sub></var> &times; ( 1 - <var>x<sub><i>old</i></sub></var> )
+						<br>Escolha a vari&aacute;vel para ser encontrada
+					</p>
+					<p><input type="radio" name="radioOpcoes" value="k"> k</input></p>
+					<p><input type="radio" name="radioOpcoes" value="xnew"> x<sub>new</sub></input></p>
+					<p><input type="radio" name="radioOpcoes" value="xold"> x<sub>old</sub></input></p>
+				</div>
+				<div class="w3-text-white xnew selectted">
+					<h2>Digite o valor</h2>
+					<p>k: <input class="XNXN" type="number" name="K" min="0" max="4" placeholder="[0, 4]"></input></p>
+					<p>x<sub>old</sub>: <input class="XNXN" type="number" name="XO"></input></p>
+					<button type="button" value="XN">Calcule X(new) agora</button>
+					<p id="/equacao4/XN"></p>
+				</div>
+				<div class="w3-text-white xold selectted">
+					<h2>Digite o valor</h2>
+					<p>k: <input class="XOXO" type="number" name="K" min="0" max="4" placeholder="[0, 4]"></input></p>
+					<p>x<sub>new</sub>: <input class="XOXO" type="number" name="XN"></input></p>
+					<button type="button" value="XO">Calcule X(old) agora</button>
+					<p id="/equacao4/XO"></p>
+				</div>
+				<div class="w3-text-white k selectted">
+					<h2>Digite o valor</h2>
+					<p>x<sub>new</sub>: <input class="KK" type="number" name="XN"></input></p>
+					<p>x<sub>old</sub>: <input class="KK" type="number" name="XO"></input></p>
+					<button type="button" value="K">Calcule K agora</button>
+					<p id="/equacao4/K"></p>
+				</div>
+			  </div>
+
+			  <!-- EQUAÇÃO DE CLAPEYRON -->
+			  <div class="equacao" id="/equacao5/">
+				<div class="w3 clapeyron selectt">
+					<h2>Equa&ccedil;&atilde;o de Clapeyron</h2>
+					<p>
+						<var>p</var> &times; <var>V</var> = <var>n</var> &times; <var>R</var> &times; <var>T</var>
+						<br>Escolha a vari&aacute;vel para ser encontrada
+					</p>
+					<p><input type="radio" name="radioOpcoes" value="p"> p</input></p>
+					<p><input type="radio" name="radioOpcoes" value="V"> V</input></p>
+					<p><input type="radio" name="radioOpcoes" value="n"> n</input></p>
+					<p><input type="radio" name="radioOpcoes" value="R"> R</input></p>
+					<p><input type="radio" name="radioOpcoes" value="T"> T</input></p>
+				</div>
+				<div class="w3-text-white p selectted">
+					<h2>Digite o valor</h2>
+					<p>V: <input class="PP" type="number" name="V"></input> L</p>
+					<p>n: <input class="PP" type="number" name="N"></input> mol(s)</p>
+					<p>R: <input class="PP" type="text" name="R" value="0,082" readonly></input> atm. L/mol . K</p>
+					<p>T: <input class="PP" type="number" name="T"></input>  Kelvin(s)</p>
+					<button type="button" value="P">Calcule p agora</button>
+					<p id="/equacao5/P"></p>
+				</div>
+				<div class="w3-text-white V selectted">
+					<h2>Digite o valor</h2>
+					<p>P: <input class="VV" type="number" name="P"></input> atm</p>
+					<p>n: <input class="VV" type="number" name="N"></input> mol(s)</p>
+					<p>R: <input class="VV" type="text" name="R" value="0,082" readonly></input> atm. L/mol . K</p>
+					<p>T: <input class="VV" type="number" name="T"></input>  Kelvin(s)</p>
+					<button type="button" value="V">Calcule V agora</button>
+					<p id="/equacao5/V"></p>
+				</div>
+				<div class="w3-text-white n selectted">
+					<h2>Digite o valor</h2>
+					<p>P: <input class="NN" type="number" name="P"></input> atm</p>
+					<p>V: <input class="NN" type="number" name="V"></input> L</p>
+					<p>R: <input class="NN" type="text" name="R" value="0,082" readonly></input> atm. L/mol . K</p>
+					<p>T: <input class="NN" type="number" name="T"></input>  Kelvin(s)</p>
+					<button type="button" value="N">Calcule n agora</button>
+					<p id="/equacao5/N"></p>
+				</div>
+				<div class="w3-text-white R selectted">
+					<h2>Digite o valor</h2>
+					<p hidden>P: <input class="RR" type="number" name="P" disabled></input> atm</p>
+					<p hidden>V: <input class="RR" type="number" name="V" disabled></input> L</p>
+					<p hidden>n: <input class="RR" type="number" name="N" disabled></input> mol(s)</p>
+					<p hidden>T: <input class="RR" type="number" name="T" disabled></input>  Kelvin(s)</p>
+					<button type="button" value="R">Calcule R agora</button>
+					<p id="/equacao5/R"></p>
+				</div>
+				<div class="w3-text-white T selectted">
+					<h2>Digite o valor</h2>
+					<p>P: <input class="TT" type="number" name="P"></input> atm</p>
+					<p>V: <input class="TT" type="number" name="V"></input> L</p>
+					<p>n: <input class="TT" type="number" name="N"></input> mol(s)</p>
+					<p>R: <input class="TT" type="text" name="R" value="0,082" readonly></input> atm. L/mol . K</p>
+					<button type="button" value="T">Calcule T agora</button>
+					<p id="/equacao5/T"></p>
+				</div>
+			  </div>
+
+			  <!-- EQUAÇÃO DE TORRICELLI -->
+			  <div class="equacao" id="/equacao6/">
+				<div class="w3 torricelli selectt">
+					<h2>Equa&ccedil;&atilde;o de Torricelli</h2>
+					<p>
+						<var>v<sup>2</sup></var> = <var>v<sub>0</sub><sup>2</sup></var> &plus; 2 &times; <var>a</var> &times; <var>S</var>
+						<br>Escolha a vari&aacute;vel para ser encontrada
+					</p>
+					<p><input type="radio" name="radioOpcoes" value="v"> v</input></p>
+					<p><input type="radio" name="radioOpcoes" value="v0"> v<sub>0</sub></input></p>
+					<p><input type="radio" name="radioOpcoes" value="aa"> a</input></p>
+					<p><input type="radio" name="radioOpcoes" value="S"> S</input></p>
+				</div>
+				<div class="w3-text-white v selectted">
+					<h2>Digite o valor</h2>
+					<p>v<sub>0</sub>: <input class="VV" type="number" name="V0"></input> m/s</p>
+					<p>a: <input class="VV" type="number" name="A"></input> m/s²</p>
+					<p>S: <input class="VV" type="number" name="S"></input> m</p>
+					<button type="button" value="V">Calcule V agora</button>
+					<p id="/equacao6/V"></p>
+				</div>
+				<div class="w3-text-white v0 selectted">
+					<h2>Digite o valor</h2>
+					<p>v: <input class="VoVo" type="number" name="V"></input> m/s</p>
+					<p>a: <input class="VoVo" type="number" name="A"></input> m/s²</p>
+					<p>S: <input class="VoVo" type="number" name="S"></input> m</p>
+					<button type="button" value="Vo">Calcule Vo agora</button>
+					<p id="/equacao6/Vo"></p>
+				</div>
+				<div class="w3-text-white aa selectted">
+					<h2>Digite o valor</h2>
+					<p>v: <input class="AA" type="number" name="V"></input> m/s</p>
+					<p>v<sub>0</sub>: <input class="AA" type="number" name="V0"></input> m/s</p>
+					<p>S: <input class="AA" type="number" name="S"></input> m</p>
+					<button type="button" value="A">Calcule a agora</button>
+					<p id="/equacao6/A"></p>
+				</div>
+				<div class="w3-text-white S selectted">
+					<h2>Digite o valor</h2>
+					<p>v: <input class="SS" type="number" name="V"></input> m/s</p>
+					<p>v<sub>0</sub>: <input class="SS" type="number" name="V0"></input> m/s</p>
+					<p>a: <input class="SS" type="number" name="A"></input> m/s²</p>
+					<button type="button" value="S">Calcule S agora</button>
+					<p id="/equacao6/S"></p>
+				</div>
+			  </div>
+
+			  <!-- EQUAÇÃO DE GAUSS -->
+			  <div class="equacao" id="/equacao7/">
+				<div class="w3 gauss selectt">
+					<h2>Equa&ccedil;&atilde;o de Gauss</h2>
+					<p>
+						<var>1 &divide; f</var>  =  <var>1 &divide; p</var> &plus; <var>1 &divide; p'</var>
+						<br>Escolha a vari&aacute;vel para ser encontrada
+					</p>
+					<p><input type="radio" name="radioOpcoes" value="ff"> f</input></p>
+					<p><input type="radio" name="radioOpcoes" value="pp"> p</input></p>
+					<p><input type="radio" name="radioOpcoes" value="plinha"> p'</input></p>
+				</div>
+				<div class="w3-text-white ff selectted">
+					<h2>Digite o valor</h2>
+					<p>p: <input class="FF" type="number" name="P"></input></p>
+					<p>p': <input class="FF" type="number" name="PL"></input></p>
+					<button type="button" value="F">Calcule f agora</button>
+					<p id="/equacao7/F"></p>
+				</div>
+				<div class="w3-text-white pp selectted">
+					<h2>Digite o valor</h2>
+					<p>f: <input class="PP" type="number" name="F"></input></p>
+					<p>p': <input class="PP" type="number" name="PL"></input></p>
+					<button type="button" value="P">Calcule p agora</button>
+					<p id="/equacao7/P"></p>
+				</div>
+				<div class="w3-text-white plinha selectted">
+					<h2>Digite o valor</h2>
+					<p>f: <input class="PLPL" type="number" name="F"></input></p>
+					<p>p: <input class="PLPL" type="number" name="P"></input></p>
+					<button type="button" value="PL">Calcule p' agora</button>
+					<p id="/equacao7/PL"></p>
+				</div>
+			  </div>
+
+			  <!-- FORÇA SOBRE UMA PARTÍCULA -->
+			  <div class="equacao" id="/equacao8/">
+				<div class="w3 forca selectt">
+					<h2>For&ccedil;a sobre uma part&iacute;cula</h2>
+					<p>
+						<var>F<sub>m</sub></var> = <var>B</var> &times; <var>i</var> &times; <var>l</var> &times; <var>sen( &theta; )</var>
+						<br>Escolha a vari&aacute;vel para ser encontrada
+					</p>
+					<p><input type="radio" name="radioOpcoes" value="Fm"> F<sub>m</sub></input></p>
+					<p><input type="radio" name="radioOpcoes" value="Bb"> B</input></p>
+					<p><input type="radio" name="radioOpcoes" value="ii"> i</input></p>
+					<p><input type="radio" name="radioOpcoes" value="ll"> l</input></p>
+					<p><input type="radio" name="radioOpcoes" value="theta"> &theta;</input></p>
+				</div>
+				<div class="w3-text-white Fm selectted">
+					<h2>Digite o valor</h2>
+					<p>B: <input class="FF" type="number" name="B" required></input> Tesla</p>
+					<p>i: <input class="FF" type="number" name="I" required></input> A</p>
+					<p>l: <input class="FF" type="number" name="L" required></input> m</p>
+					<p>&theta;: <input class="FF" type="number" name="T" required></input> graus</p>
+					<button type="button" value="F">Calcule Fm agora</button>
+					<p id="/equacao8/F"></p>
+				</div>
+				<div class="w3-text-white Bb selectted">
+					<h2>Digite o valor</h2>
+					<p>F<sub>m</sub>: <input class="BB" type="number" name="F"></input> N</p>
+					<p>i: <input class="BB" type="number" name="I"></input> A</p>
+					<p>l: <input class="BB" type="number" name="L"></input> m</p>
+					<p>&theta;: <input class="BB" type="number" name="T"></input> graus</p>
+					<button type="button" value="B">Calcule B agora</button>
+					<p id="/equacao8/B"></p>
+				</div>
+				<div class="w3-text-white ii selectted">
+					<h2>Digite o valor</h2>
+					<p>F<sub>m</sub>: <input class="II" type="number" name="F"></input> N</p>
+					<p>B: <input class="II" type="number" name="B"></input> Tesla</p>
+					<p>l: <input class="II" type="number" name="L"></input> m</p>
+					<p>&theta;: <input class="II" type="number" name="T"></input> graus</p>
+					<button type="button" value="I">Calcule i agora</button>
+					<p id="/equacao8/I"></p>
+				</div>
+				<div class="w3-text-white ll selectted">
+					<h2>Digite o valor</h2>
+					<p>F<sub>m</sub>: <input class="LL" type="number" name="F"></input> N</p>
+					<p>B: <input class="LL" type="number" name="B"></input> Tesla</p>
+					<p>i: <input class="LL" type="number" name="I"></input> A</p>
+					<p>&theta;: <input class="LL" type="number" name="T"></input> graus</p>
+					<button type="button" value="L">Calcule l agora</button>
+					<p id="/equacao8/L"></p>
+				</div>
+				<div class="w3-text-white theta selectted">
+					<h2>Digite o valor</h2>
+					<p>F<sub>m</sub>: <input class="TT" type="number" name="F"></input> N</p>
+					<p>B: <input class="TT" type="number" name="B"></input> Tesla</p>
+					<p>i: <input class="TT" type="number" name="I"></input> A</p>
+					<p>l: <input class="TT" type="number" name="L"></input> m</p>
+					<button type="button" value="T">Calcule θ agora</button>
+					<p id="/equacao8/T"></p>
+				</div>
+			  </div>
+			
+			</div>
+		  </div>
+		</div>
+		<!--https://www.geeksforgeeks.org/how-to-show-and-hide-div-elements-using-radio-buttons/-->
+		<!--<div class="w3-half">
+				<h2>Where</h2>
+				<p>Some place, an address</p>
+				<p>Some where, some address</p>
+			  </div>-->
+		<script type="text/javascript"> 
+            $(document).ready(function() { 
+                $('input[type="radio"]').click(function() { 
+                    var inputValue = $(this).attr("value"); 
+                    var targetBox = $("." + inputValue); 
+                    $(".selectt").not(targetBox).hide(); 
+                    $(targetBox).show(); 
+                }); 
+            }); 
+            
+            $(document).ready(function() { 
+                $('input[type="radio"]').click(function() { 
+                    var inputValue = $(this).attr("value"); 
+                    var targetBox = $("." + inputValue); 
+                    $(".selectted").not(targetBox).hide(); 
+                    $(targetBox).show(); 
+                }); 
+            }); 
+        </script>
+		
+		<!-- RSVP section -->
+		<div class="w3-container w3-padding-64 w3-white w3-center w3-wide" id="rodape">
+		  <h1>ESPERAMOS QUE TENHA CONSEGUIDO!</h1>
+		  <p class="w3-large">Trabalho Pr&aacute;tico de Paradigmas de Linguagens de Programa&ccedil;&atilde;o</p>
+		  <!-- <p class="w3-xlarge">
+			<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-round w3-red w3-opacity w3-hover-opacity-off" style="padding:8px 60px">RSVP</button>
+		  </p> -->
+		</div>
+
+		<!--
+		RSVP modal
+		<div id="id01" class="w3-modal">
+		  <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="padding:32px;max-width:600px">
+			<div class="w3-container w3-white w3-center">
+			  <h1 class="w3-wide">CAN YOU COME?</h1>
+			  <p>We really hope you can make it.</p>
+			  <form>
+				<input class="w3-input w3-border" type="text" placeholder="Name(s)" name="name">
+			  </form>
+			  <p><i>Sincerely, John & Jane</i></p>
+			  <div class="w3-row">
+				<div class="w3-half">
+				  <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-block w3-green">Going</button>
+				</div>
+				<div class="w3-half">
+				  <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-block w3-red">Can't come</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		-->
+		</div>
+
+		<!-- Footer -->
+		<footer class="w3-center w3-black w3-padding-16">
+		  <p>
+			  Desenvolvido por Layse Garcia, Ismael Martins, Caio Oliveira, 
+			  Gabriel Teodoro e Jonathan Nascimento.
+		  </p>
+		</footer>
+		<div class="w3-hide-small" style="margin-bottom:32px"> </div>
+
+	</body>
+</html>
